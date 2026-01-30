@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Contact – Axokit</title>
+<title>Contact — AXOKIT</title>
 
 <style>
 :root{
 --blue:#1f4fd8;
+--green:#16a34a;
 --gold:#d4af37;
 --bg:#f4f7ff;
 --card:#ffffff;
@@ -16,85 +17,94 @@
 --muted:#6b7280;
 }
 
+*{box-sizing:border-box}
+
 body{
 margin:0;
-font-family:system-ui,Segoe UI,Roboto,Arial;
-background:var(--bg);
+font-family:system-ui,Segoe UI,Arial;
+background:linear-gradient(180deg,#eef4ff,#ffffff);
 color:var(--text);
 }
 
-.topBar{
-height:4px;
-background:linear-gradient(90deg,var(--gold),var(--blue));
+.topbar{
+height:5px;
+background:linear-gradient(90deg,var(--gold),var(--blue),var(--green));
 }
 
 .wrap{
 max-width:900px;
 margin:auto;
-padding:40px 20px 60px;
+padding:40px 18px 60px;
 text-align:center;
 }
 
-.logo{height:70px}
+.logo{height:70px;margin-bottom:10px}
 
-h1{color:var(--blue);margin:15px 0 6px}
+h1{
+margin:8px 0;
+color:var(--blue);
+font-weight:900;
+}
 
-.slogan{
+.subtitle{
 font-weight:800;
 color:#444;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .card{
 background:var(--card);
-border-radius:14px;
+border-radius:20px;
 padding:26px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-border:1px solid #e3e8ff;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+border:1px solid #e4e9ff;
 text-align:left;
 }
 
+/* CONTACT GRID */
 .grid{
 display:grid;
-grid-template-columns:1fr 1fr 1fr;
+grid-template-columns:repeat(3,1fr);
 gap:14px;
-margin-bottom:25px;
+margin-bottom:26px;
 }
 
 @media(max-width:800px){
 .grid{grid-template-columns:1fr}
 }
 
-.contactCol{
+.col{
 border:1px solid #e5e7eb;
-border-radius:10px;
+border-radius:14px;
 padding:14px;
 }
 
-.contactCol b{
+.col b{
 display:block;
 margin-bottom:6px;
+color:#1f4fd8;
 }
 
-.contactCol a{
+.col a{
 display:block;
-color:var(--blue);
 text-decoration:none;
-font-weight:700;
+font-weight:800;
+color:#0b1220;
 margin-top:4px;
 }
 
+/* FORM */
 label{
 display:block;
-margin-top:10px;
+margin-top:12px;
 font-weight:800;
 }
 
 input,textarea{
 width:100%;
-padding:10px;
+padding:11px;
 margin-top:6px;
-border-radius:8px;
+border-radius:10px;
 border:1px solid #ccc;
 font-family:inherit;
 }
@@ -102,27 +112,50 @@ font-family:inherit;
 button{
 margin-top:18px;
 width:100%;
-padding:12px;
-border-radius:10px;
+padding:14px;
+border-radius:14px;
 border:none;
-background:var(--blue);
+background:linear-gradient(90deg,#2563eb,#1f4fd8);
 color:white;
 font-weight:900;
 cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.18);
 }
 
+/* BADGE */
+.badge{
+display:inline-block;
+margin:10px 0 18px;
+padding:6px 16px;
+border-radius:999px;
+background:#eaf0ff;
+color:var(--blue);
+font-weight:900;
+font-size:13px;
+}
+
+/* FOOTER */
 footer{
 margin-top:30px;
 text-align:center;
-color:#777;
 font-weight:700;
+color:#777;
+font-size:13px;
+}
+
+.back{
+display:inline-block;
+margin-top:18px;
+text-decoration:none;
+font-weight:900;
+color:#1f4fd8;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topBar"></div>
+<div class="topbar"></div>
 
 <div class="wrap">
 
@@ -130,27 +163,29 @@ font-weight:700;
 
 <h1>Contact AXOKIT</h1>
 
-<div class="slogan">
-Ensemble pour l’avenir de l’éducation nationale Malagasy
+<div class="subtitle">
+Travaillons ensemble pour l’avenir de l’éducation nationale Malagasy
 </div>
+
+<div class="badge">Projet éducatif & social national</div>
 
 <div class="card">
 
 <div class="grid">
 
-<div class="contactCol">
-<b>Fondateur Axokit (Luxembourg)</b>
+<div class="col">
+<b>Direction AXOKIT Europe</b>
 <a href="mailto:direction@axokit.com">direction@axokit.com</a>
 </div>
 
-<div class="contactCol">
-<b>Direction Axokit Madagascar</b>
+<div class="col">
+<b>AXOKIT Madagascar</b>
 <a href="mailto:naomi.nisi@madagascarteletravail.com">naomi.nisi@madagascarteletravail.com</a>
 <a href="tel:+261346697478">+261 34 66 974 78</a>
 </div>
 
-<div class="contactCol">
-<b>Équipe AXOKIT</b>
+<div class="col">
+<b>Partenariats & Institutions</b>
 <a href="mailto:partenariat@axokit.com">partenariat@axokit.com</a>
 </div>
 
@@ -160,9 +195,9 @@ Ensemble pour l’avenir de l’éducation nationale Malagasy
 
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" value="merci.html">
-<input type="hidden" name="_subject" value="Demande RDV / Démonstration Axokit">
+<input type="hidden" name="_subject" value="Demande officielle — AXOKIT">
 
-<label>Nom
+<label>Nom complet
 <input name="Nom" required>
 </label>
 
@@ -170,7 +205,7 @@ Ensemble pour l’avenir de l’éducation nationale Malagasy
 <input type="email" name="Email" required>
 </label>
 
-<label>Organisation
+<label>Organisation / Institution
 <input name="Organisation">
 </label>
 
@@ -178,14 +213,16 @@ Ensemble pour l’avenir de l’éducation nationale Malagasy
 <textarea name="Message" rows="4"></textarea>
 </label>
 
-<button type="submit">Envoyer la demande</button>
+<button type="submit">Envoyer à AXOKIT</button>
 
 </form>
 
 </div>
 
+<a class="back" href="index.html">← Retour à l’accueil</a>
+
 <footer>
-Axokit – Station IA Scientifique – Madagascar<br>
+AXOKIT — Station IA Scientifique Madagascar<br>
 Former aujourd’hui les talents de demain
 </footer>
 
