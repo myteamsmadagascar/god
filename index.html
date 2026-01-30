@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>AXOKIT — Station IA Scientifique</title>
 
 <style>
@@ -18,92 +17,91 @@ text-align:center;
 }
 
 .container{max-width:900px;margin:auto;padding:12px}
-.logo{height:58px;margin:12px auto}
+.logo{height:60px;margin:14px auto 10px}
 
-/* SLIDER */
-
-.slider{
-width:320px;
-margin:10px auto;
-aspect-ratio:1/1;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 14px 40px rgba(0,0,0,.25);
-position:relative;
-background:#000;
+/* BADGE */
+.badge{
+display:inline-block;
+margin:8px auto 10px;
+padding:8px 16px;
+border-radius:999px;
+font-weight:1000;
+font-size:12px;
+color:white;
+background:linear-gradient(90deg,#16a34a,#2563eb);
+box-shadow:0 10px 24px rgba(0,0,0,.12);
+letter-spacing:.3px;
 }
 
-.slides{display:flex;height:100%;transition:.6s ease}
-.slide{min-width:100%}
+/* SLIDER (CARRÉ CADRÉ, IMAGE ENTIÈRE) */
+.slider{
+width:310px;
+max-width:100%;
+aspect-ratio:1/1;
+margin:10px auto 14px;
+border-radius:22px;
+overflow:hidden;
+position:relative;
+background:linear-gradient(135deg, rgba(37,99,235,.15), rgba(34,197,94,.12));
+border:1px solid rgba(15,23,42,.10);
+box-shadow:0 14px 40px rgba(0,0,0,.20);
+}
+
+.slides{display:flex;height:100%;transition:transform .6s ease}
+.slide{min-width:100%;height:100%;display:grid;place-items:center;padding:10px}
 
 .slide img{
 width:100%;
 height:100%;
-object-fit:contain;
-background:#000;
-padding:6px;
+object-fit:contain;         /* IMPORTANT : image entière, jamais “coupée” */
+object-position:center;
+border-radius:14px;
+filter:saturate(1.02) contrast(1.02);
 }
 
-/* ARROWS */
-
 .arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:34px;height:34px;
-border-radius:50%;
+position:absolute;top:50%;transform:translateY(-50%);
+width:36px;height:36px;border-radius:50%;
 background:rgba(0,0,0,.45);
 color:white;
-font-size:18px;
-display:grid;
-place-items:center;
-cursor:pointer;
+display:grid;place-items:center;
+font-size:20px;cursor:pointer;
+user-select:none;
 }
 .left{left:8px}
 .right{right:8px}
 
-/* BADGE */
-
-.badge{
-background:#16a34a;
-color:white;
-padding:6px 16px;
-border-radius:999px;
-font-weight:900;
-font-size:12px;
-display:inline-block;
-margin:8px
-}
+/* TITRE */
+h3{margin:6px 0 10px;font-weight:1000}
 
 /* BOUTONS */
-
 .bigbtn{
 display:block;
 width:92%;
 margin:8px auto;
 padding:13px;
 border-radius:14px;
-font-weight:900;
-color:white;
+font-weight:1000;
 text-decoration:none;
-animation:pulse 2.4s infinite;
-box-shadow:0 8px 22px rgba(0,0,0,.18);
+color:white;
+font-size:14px;
+box-shadow:0 10px 26px rgba(0,0,0,.16);
+transform:translateZ(0);
+animation:pulse 2.6s infinite;
 }
-
-@keyframes pulse{50%{transform:scale(1.04)}}
+@keyframes pulse{50%{transform:scale(1.035)}}
 
 .blue{background:linear-gradient(90deg,#2563eb,#1f4fd8)}
 .green{background:linear-gradient(90deg,#16a34a,#22c55e)}
 .pink{background:linear-gradient(90deg,#ff2d55,#ff6b6b)}
-.gold{background:linear-gradient(90deg,#d4af37,#facc15)}
+.gold{background:linear-gradient(90deg,#d4af37,#facc15); color:#1b1605}
 
 .btn{
-display:block;
-width:92%;
+display:block;width:92%;
 margin:6px auto;
 padding:10px;
 border-radius:12px;
-font-weight:800;
+font-weight:900;
 background:white;
 border:1.5px solid #2563eb;
 text-decoration:none;
@@ -111,40 +109,37 @@ color:#0b1220;
 }
 
 /* PILLS */
-
 .pill{
 display:inline-block;
 margin:4px;
 padding:8px 14px;
 border-radius:999px;
 border:1.5px solid #2563eb;
-font-weight:800;
+font-weight:900;
+font-size:13px;
+background:rgba(255,255,255,.75);
 }
 
-/* NEON TEXT */
-
+/* NEON MALAGASY */
 .malagasy{
-font-weight:900;
-margin:18px 0 6px;
+font-weight:1000;
+margin:16px 0 6px;
 font-size:22px;
 color:#22c55e;
-text-shadow:0 0 6px #22c55e,0 0 12px #22c55e,0 0 24px #16a34a;
-animation:neon 2.8s infinite alternate;
+text-shadow:0 0 8px #22c55e, 0 0 18px #16a34a, 0 0 28px rgba(34,197,94,.55);
+animation:neon 3s infinite alternate;
 }
+@keyframes neon{to{opacity:.9;text-shadow:0 0 18px #22c55e, 0 0 34px rgba(34,197,94,.75)}}
 
 .malagasy2{
-font-weight:800;
+font-weight:900;
 font-size:16px;
 color:#2563eb;
-text-shadow:0 0 6px #2563eb,0 0 12px #2563eb;
-animation:neon2 3s infinite alternate;
+text-shadow:0 0 10px rgba(37,99,235,.55);
+margin-bottom:6px;
 }
 
-@keyframes neon{to{text-shadow:0 0 18px #22c55e}}
-@keyframes neon2{to{text-shadow:0 0 16px #2563eb}}
-
 /* CARDS */
-
 .card{
 background:white;
 border-radius:20px;
@@ -152,40 +147,22 @@ padding:18px;
 margin:14px 6px;
 box-shadow:0 10px 28px rgba(0,0,0,.10);
 text-align:left;
+border:1px solid rgba(15,23,42,.08);
 }
+.card h2{margin-top:0;color:#1f4fd8;font-weight:1000}
 
-.card h2{color:#2563eb;margin-top:0}
-.videoTitle{text-align:center;font-weight:900;color:#2563eb;margin-bottom:6px}
+.videoTitle{font-weight:1000;margin-bottom:6px;color:#1f4fd8;text-align:center}
+iframe{width:100%;height:240px;border-radius:12px;border:none}
+@media(min-width:768px){iframe{height:320px}}
 
-iframe{
-width:100%;
-height:240px;
-border-radius:12px;
-border:none;
-}
-
-footer{
-margin:22px;
-font-weight:700;
-color:#666;
-font-size:13px
-}
+footer{margin:22px;font-weight:800;color:#666;font-size:13px}
 
 /* WHATSAPP */
-
 .waFloat{
-position:fixed;
-right:14px;
-bottom:14px;
-width:52px;
-height:52px;
-border-radius:50%;
-background:#25D366;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 24px rgba(0,0,0,.25);
-z-index:9999;
+position:fixed;right:14px;bottom:14px;width:52px;height:52px;border-radius:50%;
+background:#25D366;display:flex;align-items:center;justify-content:center;
+box-shadow:0 10px 24px rgba(0,0,0,.25);z-index:9999;
+text-decoration:none;
 }
 </style>
 </head>
@@ -196,18 +173,19 @@ z-index:9999;
 
 <div class="container">
 
-<div class="slider">
-<div class="slides" id="slides">
-<div class="slide"><img src="education.png"></div>
-<div class="slide"><img src="repas.png"></div>
-<div class="slide"><img src="demande.png"></div>
-<div class="slide"><img src="etat.png"></div>
-</div>
-<div class="arrow left" onclick="move(-1)">‹</div>
-<div class="arrow right" onclick="move(1)">›</div>
-</div>
+<div class="badge">NOUS SOLLICITONS L’ÉTAT MALGACHE</div>
 
-<div class="badge">PROJET NATIONAL</div>
+<!-- SLIDER -->
+<div class="slider" aria-label="Slider Axokit">
+  <div class="slides" id="slides">
+    <div class="slide"><img src="education.png" alt="Éducation numérique"></div>
+    <div class="slide"><img src="repas.png" alt="Petit-déjeuner de la réussite"></div>
+    <div class="slide"><img src="demande.png" alt="Demande officielle"></div>
+    <div class="slide"><img src="etat.png" alt="Partenariat avec l'État"></div>
+  </div>
+  <div class="arrow left" onclick="move(-1)">‹</div>
+  <div class="arrow right" onclick="move(1)">›</div>
+</div>
 
 <h3>Station IA Scientifique — Offre clé en main</h3>
 
@@ -216,43 +194,67 @@ z-index:9999;
 <a class="bigbtn green" href="malagasy.html">Taratasy Malagasy</a>
 
 <div>
-<span class="pill">Mathématiques</span>
-<span class="pill">Physique</span>
-<span class="pill">Chimie</span>
+  <span class="pill">Mathématiques</span>
+  <span class="pill">Physique</span>
+  <span class="pill">Chimie</span>
+</div>
+
+<div style="margin:10px 0;font-size:13px;font-weight:900;color:#334">
+Extension future prévue :
+<br>
+<span class="pill">Anglais</span>
+<span class="pill">Allemand</span>
+<span class="pill">Espagnol</span>
+<span class="pill">Italien</span>
+<br>+ Synthèse vocale intégrée
 </div>
 
 <div class="malagasy">Ny fianarana no lova tsara indrindra.</div>
 <div class="malagasy2">Ampio ny zanaka Malagasy</div>
-<a class="bigbtn blue" href="contact.html">✉️ Répondre à Axokit</a>
 
-<a class="bigbtn gold" href="https://www.axokit.com" target="_blank">APPLICATION AXOKIT </a>
-<a class="bigbtn blue" href="accord.html">📜 Accord-cadre national</a>
-<a class="bigbtn green" href="presentation.html">🌍 Présentation globale</a>
-
-<a class="btn" href="plan-national.html">Plan national</a>
-<a class="btn" href="lycees-colleges.html">Lycées & collèges</a>
-<a class="btn" href="maintenance.html">Guide maintenance</a>
-
-<div class="card">
-<div class="videoTitle">Fangatahana (Malagasy)</div>
-<iframe src="https://www.youtube.com/embed/JX-1kAku6xM"></iframe>
-</div>
-
-<div class="card">
-<div class="videoTitle">Demande (en Français)</div>
-<iframe src="https://www.youtube.com/embed/VADZ9RNAMVc"></iframe>
-</div>
-
-<div class="card">
+<a class="bigbtn gold" href="https://www.axokit.com" target="_blank">Découvrir l’application internationale</a>
+<a class="bigbtn blue" href="contact.html">📩 Répondre à Axokit</a>
 
 <a class="bigbtn blue" href="projet.html">📊 Détails et financement</a>
-<a class="bigbtn green" href="investissement.html">💼 Projet d’investissement</a>
+<a class="bigbtn green" href="investissement.html">💼 Projet d’investissement — Axokit État</a>
 <a class="bigbtn gold" href="pc.html">🖥️ Configuration technique</a>
 <a class="bigbtn green" href="option.html">➕ Offre complémentaire</a>
 <a class="bigbtn pink" href="achat.html">🛒 Achats requis</a>
 <a class="bigbtn blue" href="cgu.html">📜 CGU</a>
 
+<!-- VIDEOS -->
+<div class="card">
+  <div class="videoTitle">Présentation Malagasy</div>
+  <iframe src="https://www.youtube.com/embed/JX-1kAku6xM" allowfullscreen></iframe>
 </div>
+
+<div class="card">
+  <div class="videoTitle">Présentation Française</div>
+  <iframe src="https://www.youtube.com/embed/VADZ9RNAMVc" allowfullscreen></iframe>
+</div>
+
+<!-- COMPRENDRE (TEXTE IMPORTANT — CONSERVÉ + AJOUT PETIT-DÉJEUNER) -->
+<div class="card">
+  <h2>Comprendre le projet</h2>
+
+  <p>Axokit est une Station d’Intelligence Artificielle Scientifique fonctionnant hors connexion, destinée aux collèges et lycées.</p>
+
+  <p>Elle permet aux élèves d’améliorer leurs résultats en Mathématiques, Physique et Chimie grâce à un tuteur numérique disponible en permanence.</p>
+
+  <p>Solution clé en main : ordinateurs configurés, application installée et accompagnement humain.</p>
+
+  <p>Le modèle repose sur une équité numérique nationale : le privé finance le public.</p>
+
+  <p>L’État est invité à officialiser l’adoption du numérique éducatif via Axokit, sans engagement financier direct.</p>
+
+  <p>Axokit peut aussi soutenir un programme “Petit-déjeuner de la réussite” pour les enfants en grande précarité, afin d’améliorer la concentration et la réussite scolaire.</p>
+
+  <p><b>Objectif :</b> garantir à chaque élève malgache un accès équitable à une éducation scientifique moderne.</p>
+
+  <a class="btn" href="comprendre.html">Lire la présentation complète</a>
+  <a href="presentation.html" class="bigbtn blue">🌍 Présentation globale</a>
+</div>
+
 <footer>
 AXOKIT — Station IA Scientifique Madagascar<br>
 Former aujourd’hui les talents de demain
@@ -260,18 +262,18 @@ Former aujourd’hui les talents de demain
 
 </div>
 
-<a class="waFloat" href="https://wa.me/261346697478">🟢</a>
+<a class="waFloat" href="https://wa.me/261346697478" target="_blank">🟢</a>
 
 <script>
 let i=0;
+const total=4;
 function move(n){
-const s=document.getElementById("slides");
-i=(i+n+4)%4;
-s.style.transform="translateX(-"+(i*100)+"%)";
+  const s=document.getElementById("slides");
+  i=(i+n+total)%total;
+  s.style.transform="translateX(-"+(i*100)+"%)";
 }
 setInterval(()=>move(1),4000);
 </script>
 
 </body>
-
 </html>
